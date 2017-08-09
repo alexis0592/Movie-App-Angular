@@ -1,16 +1,17 @@
-<div class="col-xs-12">
-  <a href="#">
+<div *ngFor="let movie of moviesList"class="col-xs-12">
+  <a href="#" class="list-group-item clearfix">
     <div class="pull-left">
-      <h4>Title</h4>
-      <p class="list-group-item-text"><b>Format: </b> formato</p>
-      <p class="list-group-item-text"><b>Country: </b> country</p>
-      <p class="list-group-item-text"><b>Duration: </b>duration</p>
+      <h4>{{ movie.title }}</h4>
+      <p class="list-group-item-text"><b>Format: </b> {{ movie.format }}</p>
+      <p class="list-group-item-text"><b>Country: </b> {{ movie.country }}</p>
+      <p class="list-group-item-text"><b>Duration: </b>{{ movie.duration }}</p>
     </div>
     <span class="pull-right">
-      <img src="http://www.vanguardia.com/sites/default/files/imagecache/Noticia_600x400/foto_grandes_400x300_noticia/2013/12/30/web_colp_ext_0130_big_ce.jpg" 
-        alt=""
+      <img [src]="movie.imagePath" 
+        alt="{{ movie.title }}"
         class="img-responsive"
         style="max-height: 100px">
     </span>
   </a>
+  <hr>
 </div>
